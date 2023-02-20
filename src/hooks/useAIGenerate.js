@@ -1,37 +1,30 @@
 import { useEffect, useState } from 'react'
-const API_COHERE = import.meta.env.VITE_COHERE_API
+import { Configuration, OpenAIApi } from 'openai'
 
-export const useAIGenerate = (com) => {
+export const useAIGenerate = (com, apiKey) => {
   const [response, setResponse] = useState()
 
   useEffect(() => {
     const changeResponse = async () => {
-      const options = {
-        method: 'POST',
-        headers: {
-          accept: 'application/json',
-          'Cohere-Version': '2022-12-06',
-          'content-type': 'application/json',
-          authorization: `Bearer ${API_COHERE}`
-        },
-        body: JSON.stringify({
-          model: 'command-xlarge-20221108',
-          max_tokens: 300,
-          temperature: 0.2,
-          p: 0.5,
-          return_likelihoods: 'NONE',
-          truncate: 'END',
-          prompt: com
-        })
-      }
       if (!com) return
-      fetch('https://api.cohere.ai/generate', options)
-        .then(response => response.json())
+      const configuration = new Configuration({
+        apiKey
+      })
+      const openai = new OpenAIApi(configuration)
+      await openai.createCompletion({
+        model: 'text-davinci-002',
+        max_tokens: 2000,
+        prompt: com
+      })
         .then(response => {
-          const gen = response.generations[0].text
+          const gen = response.data.choices[0].text
           setResponse(gen)
         })
-        .catch(err => console.error(err))
+        .catch(err => {
+          const res = `Ocurrió un error a la hora de generar tu solicitud. El servicio no funciona o la API Key que proporcionaste no es válida.
+          ${err}`
+          setResponse(res)
+        })
     }
     changeResponse()
   }, [com])
