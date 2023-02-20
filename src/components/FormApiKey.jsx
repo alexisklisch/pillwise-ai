@@ -14,14 +14,14 @@ export function FormApiKey ({ setApikeyOn }) {
       className='max-w-sm mx-auto py-28'
       onSubmit={formHandler}
     >
-      <h4 className='mb-6'>Crea una cuenta en <a className='font-bold' href='https://platform.openai.com/signup' target='_blank' rel='noreferrer'>openai.com</a> y consigue tu clave única <a className='font-bold text-brand-violet' href='https://platform.openai.com/account/api-keys'>aquí</a>.</h4>
-      <div className='grid gap-3'>
+      <h4 className='mb-6 px-4'>Crea una cuenta en <a className='font-bold' href='https://platform.openai.com/signup' target='_blank' rel='noreferrer'>openai.com</a> y consigue tu clave única <a className='font-bold text-brand-violet' href='https://platform.openai.com/account/api-keys'>aquí</a>.</h4>
+      <div className='flex flex-col gap-3 px-4'>
         <input
           className='w-full text-lg text-dark py-2 px-5 rounded-full border border-grey-200 shadow placeholder:text-grey-500 focus-visible:outline-brand-orange'
           type='text' placeholder='Tu API key' name='api-key'
         />
         <button
-          className='bg-brand-purple col-span-2 md:col-span-1 font-bold text-lg text-grey-100 py-2 px-5 rounded-full border border-grey-200 shadow disabled:opacity-50'
+          className='bg-brand-purple shadow shadow-brand-purple/30  col-span-2 md:col-span-1 font-bold text-lg text-grey-100 py-2 px-5 rounded-full disabled:opacity-50'
         >
           Agregar
         </button>

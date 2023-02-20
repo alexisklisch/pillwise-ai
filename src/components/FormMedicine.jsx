@@ -32,6 +32,7 @@ export default function FormMedicine ({ setShowResults, setCommandSearch, setApi
   const resetApiKey = () => {
     setApikey('')
     setApikeyOn(false)
+    window.location.reload()
   }
 
   return (
