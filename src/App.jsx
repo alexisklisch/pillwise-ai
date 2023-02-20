@@ -40,7 +40,7 @@ export const App = () => {
               <article className='px-8'>
                 <video
                   className='[mask:url("/svgs/video-mask.svg")_no-repeat_center] [mask-size:contain] mx-auto'
-                  src='/vids/dados-de-la-mano.webm'
+                  src='https://alexisklisch.com/projects/pillwise/vids/dados-de-la-mano.webm'
                   muted autoPlay loop width='320'
                 />
                 <p className='text-xl text-center text-dark mt-4'>La combinación de medicamentos puede aumentar o disminuir la concentración de un medicamento en el cuerpo, lo que puede resultar en una dosis inadecuada o excesiva.</p>
@@ -48,7 +48,7 @@ export const App = () => {
               <article className='px-8'>
                 <video
                   className='[mask:url("/svgs/video-mask.svg")_no-repeat_center] [mask-size:contain] mx-auto'
-                  src='/vids/abuela-y-nieta.webm'
+                  src='https://alexisklisch.com/projects/pillwise/vids/abuela-y-nieta.webm'
                   muted autoPlay loop width='320'
                 />
                 <p className='text-xl text-center text-dark mt-4'>Puede ser difícil para las personas conocer la compatibilidad de sus medicamentos, especialmente si tienen diferentes proveedores de atención médica que prescriben diferentes drogas.</p>
